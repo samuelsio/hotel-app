@@ -1,0 +1,35 @@
+@use "../../colors.scss" as colors;
+@use "sass:color";
+
+.container {
+    height: 50px;
+    background-color: map-get(colors.$primary-colors, "dark-blue");
+    color: map-get(colors.$primary-colors, "white");
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+
+    .inner {
+        width: 100%;
+        max-width: 1024px;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+    }
+
+    .button {
+        margin-left: 10px;
+        border: none;
+        border-radius: 16px;
+        padding: 4px 20px;
+        background: color.scale(map-get(colors.$primary-colors, "white"), $lightness: -10%,);
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    
+        &:hover,
+        &:focus {
+            background-color: map-get(colors.$primary-colors, "white");
+        }
+    }
+}

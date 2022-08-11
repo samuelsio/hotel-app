@@ -1,0 +1,17 @@
+@use "../../colors.scss" as colors;
+
+.stars {
+	--percent: calc(var(--rating) / 5 * 100%);
+	display: inline-block;
+	font-size: 32px;
+	font-family: Times;
+	line-height: 1;
+
+	&::before {
+		content: '★★★★★';
+		letter-spacing: 3px;
+		background: linear-gradient(90deg, map-get(colors.$primary-colors, "gold") var(--percent), map-get(colors.$primary-colors, "light-grey") var(--percent));
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}

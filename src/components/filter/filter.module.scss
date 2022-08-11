@@ -1,0 +1,77 @@
+@use "../../colors.scss" as colors;
+@use "sass:color";
+
+.filter {
+    background: map-get(colors.$primary-colors, "white");
+    max-width: 600px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    bottom: -24px;
+    padding: 10px;
+    border: 1px solid color.scale(map-get(colors.$primary-colors, "mid-grey"), $lightness: -30%,);
+    border-radius: 6px;
+    box-shadow: 0px 4px 5px 0px color.scale(map-get(colors.$primary-colors, "black"), $alpha: -80%);
+    
+    .stars {
+        display: inline;
+        margin-right: 32px;
+
+        .unselected {
+            color: map-get(colors.$primary-colors, "light-grey");
+        }
+        
+        .selected {
+            color: map-get(colors.$primary-colors, "gold");
+        }
+        button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            padding: 3px;
+        }
+    }
+}
+
+.options {
+    .counter {
+        border: 1px solid color.scale(map-get(colors.$primary-colors, "mid-grey"), $lightness: -30%,);
+        padding: 3px 10px;
+        border-radius: 5px;
+        cursor: default;
+    }
+
+    span {
+        font-size: 14px;
+    }
+    button {
+        background: map-get(colors.$primary-colors, "white");
+        width: 26px;
+        height: 26px;
+        border-radius: 15px;
+        margin: 0 6px;
+        cursor: pointer;
+        border: 1px solid color.scale(map-get(colors.$primary-colors, "mid-grey"), $lightness: -30%,);
+        color: color.scale(map-get(colors.$primary-colors, "mid-grey"), $lightness: -30%,);
+
+        &:hover:not(:disabled) {
+            border: 1px solid map-get(colors.$primary-colors, "black");
+            color: map-get(colors.$primary-colors, "black");
+        }
+
+        &:disabled {
+            cursor: no-drop;
+            background: map-get(colors.$primary-colors, "light-grey");
+            border: 1px solid color.scale(map-get(colors.$primary-colors, "light-grey"), $lightness: -12%,);
+        }
+    }
+}
+
+.icon {
+    margin-right: 5px;
+    margin-left: 30px;
+    font-size: 18px;
+}

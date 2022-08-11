@@ -1,0 +1,42 @@
+@use "./colors.scss" as colors;
+@use "sass:color";
+
+body {
+    background: map-get(colors.$primary-colors, "light-blue");
+}
+
+h1,
+h2 {
+    color: map-get(colors.$primary-colors, "white");
+}
+
+h3,
+h4 {
+    color: color.scale(map-get(colors.$text-colors, "mid-blue"), $lightness: 10%);
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 12px;
+    line-height: normal;
+    font-weight: 500;
+    color: map-get(colors.$text-colors, "dark-blue");;
+}
+
+h6 {
+    color: map-get(colors.$text-colors, "dark-blue");
+}
+
+:global(.notice) {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+
+    p {
+        font-size: 14px;
+        background-color: color.scale(map-get(colors.$primary-colors, "light-blue"), $lightness: 30%,);
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid map-get(colors.$primary-colors, "dark-grey");
+    }
+}
