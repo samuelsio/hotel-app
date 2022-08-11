@@ -1,4 +1,5 @@
-@use "../../colors.scss" as colors;
+@use "../../mixins/colors.scss" as colors;
+@import "../../global.scss";
 
 .stars {
 	--percent: calc(var(--rating) / 5 * 100%);
@@ -6,6 +7,10 @@
 	font-size: 32px;
 	font-family: Times;
 	line-height: 1;
+
+	@include mobile {
+		font-size: 22px;
+	}
 
 	&::before {
 		content: '★★★★★';

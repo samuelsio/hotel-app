@@ -1,5 +1,6 @@
-@use "./colors.scss" as colors;
 @use "sass:color";
+@use "./mixins/colors.scss" as colors;
+@import "./mixins/breakpoints.scss";
 
 body {
     background: map-get(colors.$primary-colors, "light-blue");
@@ -8,19 +9,31 @@ body {
 h1,
 h2 {
     color: map-get(colors.$primary-colors, "white");
+
+    @include mobile {
+        font-size: 16px;
+    }
 }
 
 h3,
 h4 {
     color: color.scale(map-get(colors.$text-colors, "mid-blue"), $lightness: 10%);
     font-weight: 500;
+
+    @include mobile {
+        font-size: 13px;
+    }
 }
 
 h5 {
     font-size: 12px;
     line-height: normal;
     font-weight: 500;
-    color: map-get(colors.$text-colors, "dark-blue");;
+    color: map-get(colors.$text-colors, "dark-blue");
+
+    @include mobile {
+        font-weight: 700;
+    }
 }
 
 h6 {

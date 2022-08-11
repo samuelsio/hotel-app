@@ -56,14 +56,18 @@ const Hotel = ({ data }: { data: Array<hotelI> }) => {
 
 							{/* Hotel header */}
 							<div className={styles.header}>
-								<SimpleImageSlider width={160} height={100} images={hotel['images']} showBullets={false} showNavs={true} navMargin={0} />
-								<div className={styles.body}>
+								<div className={styles.sliderWrapper}>
+									<SimpleImageSlider width={160} height={100} images={hotel['images']} showBullets={false} showNavs={true} navMargin={0} />
+								</div>
+								<div className={styles.bodyWrapper}>
+									<div className={styles.body}>
 									<h2>{hotel['name']}</h2>
 									<h4>{hotel['address2'] ? hotel['address1'] + ",  " + hotel['address2'] : hotel['address1']}</h4>
 									<h3>{hotel['town']}</h3>
 								</div>
-								<div className={styles.rating}>
-									<Rating stars={hotel['starRating']} />
+									<div className={styles.rating}>
+										<Rating stars={hotel['starRating']} />
+									</div>
 								</div>
 							</div>
 

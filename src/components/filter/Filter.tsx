@@ -36,17 +36,20 @@ const Filter = () => {
                 </div>
             </div>
             <div className={styles.options}>
-                <FontAwesomeIcon icon={faPerson} className={styles.icon} />
-                <span>Adults:</span>
-                <button onClick={() => { handleFilters("adults", "decrease") }} disabled={filters.adults <= 1}>-</button>
-                <span className={styles.counter}>{filters.adults}</span>
-                <button onClick={() => { handleFilters("adults", "increase") }} disabled={filters.adults >= 6}>+</button>
-
-                <FontAwesomeIcon icon={faChildDress} className={styles.icon} />
-                <span>Children:</span>
-                <button onClick={() => { handleFilters("children", "decrease") }} disabled={filters.children <= 0}>-</button>
-                <span className={styles.counter}>{filters.children}</span>
-                <button onClick={() => { handleFilters("children", "increase") }} disabled={filters.children >= 4}>+</button>
+                <div className={styles.occupants}>
+                    <FontAwesomeIcon icon={faPerson} className={styles.icon} />
+                    <span>Adults:</span>
+                    <button onClick={() => { handleFilters("adults", "decrease") }} disabled={filters.adults <= 1}>-</button>
+                    <span className={styles.counter}>{filters.adults}</span>
+                    <button onClick={() => { handleFilters("adults", "increase") }} disabled={filters.adults >= 6}>+</button>
+                </div>
+                <div className={styles.occupants}>
+                    <FontAwesomeIcon icon={faChildDress} className={styles.icon} />
+                    <span>Children:</span>
+                    <button onClick={() => { handleFilters("children", "decrease") }} disabled={filters.children <= 0}>-</button>
+                    <span className={styles.counter}>{filters.children}</span>
+                    <button onClick={() => { handleFilters("children", "increase") }} disabled={filters.children >= 4}>+</button>
+                </div>
             </div>
         </div>
     )
