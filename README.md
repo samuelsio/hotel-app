@@ -1,4 +1,4 @@
-# Hotel app project built for Guestline 
+# Hotel app project
 
 Display hotel rooms and filter results by occupancy and star rating.
 
